@@ -2,11 +2,16 @@
 
     <div class="main-aside__title">
       Chat
+      <span class="main-aside__borrar" (click)="onBorrar()">🗑</span>
     </div>
 
     <div class="main-aside__mensajes">
 
-      <div class="main-aside__mensaje">10:00 (Ana): Hola</div>
+      <div class="main-aside__mensaje" *ngFor="let mensaje of mensajes">
+        ({{ mensaje.hora }}) ({{ mensaje.usuario }}) : {{ mensaje.mensaje }}
+      </div>
+
+      <!-- <div class="main-aside__mensaje">10:00 (Ana): Hola</div>
       <div class="main-aside__mensaje">10:01 (Juan): Adiós</div>
       <div class="main-aside__mensaje">10:00 (Ana): Hola</div>
       <div class="main-aside__mensaje">10:01 (Juan): Adiós</div>
@@ -25,20 +30,20 @@
       <div class="main-aside__mensaje">10:01 (Juan): Adiós</div>
       <div class="main-aside__mensaje">10:01 (Juan): Adiós</div>
       <div class="main-aside__mensaje">10:01 (Juan): Adiós</div>
-      <div class="main-aside__mensaje">10:01 (Juan): Adiós</div>
+      <div class="main-aside__mensaje">10:01 (Juan): Adiós</div> -->
 
     </div>
 
     <div class="main-aside__submit">
 
-      <form class="main-aside__submit-form">
+      <div class="main-aside__submit-form">
 
         <label for="mensaje"></label>
-        <input type="text" id="mensaje" name="id">
+        <input #mensajeInput type="text" id="mensaje" name="id" (keyup)="onEnviarMensaje($event, mensajeInput)">
 
-        <input type="submit" value="Enviar">
+        <button (click)="onMensaje(mensajeInput)">Enviar</button> 
 
-      </form>
+      </div>
       
     </div>
 
