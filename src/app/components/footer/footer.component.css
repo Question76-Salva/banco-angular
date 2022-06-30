@@ -32,3 +32,7 @@
   font-size: 0.75rem;
   text-decoration: none;
 }
+
+.main-footer {  
+  width: calc(100% - 15em);
+}

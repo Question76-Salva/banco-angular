@@ -42,12 +42,25 @@
   font-weight: bold;
 }
 
+.login-mensaje {
+  background-color: #ff5454;
+  color: #fff;
+  text-align: center;
+  padding: .5rem;
+  border-radius: .5rem;
+}
+
 .login-form label,
 .login-form input,
-.login-button {
+.login-button, 
+.login-mensaje {
   display: block;
   margin-top: 1.56rem;
   width: 100%;
+}
+
+.login-mensaje-oculto {
+  display: none;
 }
 
 .main-login__title {
@@ -55,3 +68,4 @@
   color: #ff5454;
   padding-top: 1.25rem;
 }
+
