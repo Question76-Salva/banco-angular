@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BancoService } from '../../services/banco.service';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login-cliente',
@@ -10,9 +12,14 @@ export class LoginClienteComponent implements OnInit {
 
   estaAutenticado: boolean = false;
 
-  constructor(private BancoService: BancoService) { }
+  constructor(private BancoService: BancoService, private router: Router, private authService: AuthService ) { }
 
+   // si el usuario está autenticado (el token está almacenado en el localStorage),
+   //   entonces se realiza una redirección a /chat
   ngOnInit(): void {
+    if (this.authService.estaAutenticadoGestor()) {
+      this.router.navigate(['chat']);
+    }
   }
 
   async loginCliente(usarioInput: HTMLInputElement, passwordInput: HTMLInputElement) {

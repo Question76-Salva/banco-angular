@@ -7,6 +7,7 @@
   text-align: center;
   bottom: 0;
   width: 100%;
+  z-index: -1;
 }
 
 .main-footer__enlaces {
@@ -33,6 +34,6 @@
   text-decoration: none;
 }
 
-.main-footer {  
+/* .main-footer {  
   width: calc(100% - 15em);
-}
+} */
